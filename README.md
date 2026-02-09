@@ -6,7 +6,7 @@
 > 🌟 If you find this resource helpful, please consider to star this repository:
 
 ## Introduction
-🏆 **FreqMixAttNet**, a novel crossdomain forecasting framework that unifies time and frequency representations via a domain-mixing attention mechanism.**.
+🏆 **DFANnet**, a novel crossdomain forecasting framework that unifies time and frequency representations via a domain-mixing attention mechanism.**.
 
 🌟**framework** 
 <p align="center">
@@ -29,26 +29,21 @@ bash ......
 ```
 
 ## Main Results
-We conduct extensive experiments to evaluate the performance and efficiency of FreqMixAttNet, covering long-term forecasting, including 6 real-world benchmarks and 9 baselines.
-**🏆 FreqMixAttNet achieves consistent state-of-the-art performance in all benchmarks**, covering a large variety of series with different frequencies, variate numbers and real-world scenarios.
+
+
+We conduct extensive experiments to evaluate the performance and efficiency of DFANnet, covering long-term forecasting, including 6 real-world benchmarks and 9 baselines.
+**🏆 DFANnet achieves consistent state-of-the-art performance in all benchmarks**, covering a large variety of series with different frequencies, variate numbers and real-world scenarios.
 
 ### Long-term Forecasting
 
-To facilitate comparison, we evaluate multiple forecast horizons with a fixed input sequence length of 96 for long-term forecasting. Detailed settings are provided in Appendix A.1. Table 2 summarizes the forecasting performance across all datasets and baselines. Compared with strong baselines in the frequency domain (SimpleTM Chen et al. (2025)) and the time domain (CATS Lu et al. (2024)), both of which employ complex Transformer architectures, our proposed model FreqMixAttention achieves superior performance. Compared with TimeMixer Wang et al. (2024a) and ATFNet Ye & Gao (2024), our model delivers better results, suggesting that multi-scale trend–season decomposition alone or modeling the time and frequency domains separately without interaction is insufficient. FreqMixAttention attains the best results on most forecast horizons (**17/24 for MSE and 20/24 for MAE**). These findings highlight that integrating both domains is essential for capturing underlying patterns in diverse time series data.
+We evaluate our method against a wide range of SOTA architectures. Following the design of the state-of-the-art TimeMixer++ [26 ], the input length is not fixed; instead, it is treated as a tunable hyperparameter and optimized separately
+for each dataset and each prediction horizon 𝑇 ∈ {96, 192, 336, 720}. Baseline results are primarily collected from TimeMixer++ [ 26 ] or
+the original papers.. Detailed settings are provided in Appendix A.1. Table 2 summarizes the forecasting performance across all datasets and baselines. Compared with strong baselines in the frequency domain (SimpleTM Chen et al. (2025)) and the time domain (CATS Lu et al. (2024)), both of which employ complex Transformer architectures, our proposed model DFANnet achieves superior performance. Compared with TimeMixer Wang et al. (2024a) and ATFNet Ye & Gao (2024), our model delivers better results, suggesting that multi-scale trend–season decomposition alone or modeling the time and frequency domains separately without interaction is insufficient. DFANnet attains the best results on most forecast horizons (**18/24 for MSE and 19/24 for MAE**). These findings highlight that integrating both domains is essential for capturing underlying patterns in diverse time series data.
 
 <p align="center">
 <img src="./figures/main.png"  alt="" align=center />
 </p>
 
-
-## Model Abalations
-
-To verify the effectiveness of each component of FreqMixAttNet, we provide the detailed ablation study on every possible design to evaluate four key architectural components: Adaptive Convolution Embedding (ACE), Wavelet Decomposition (WD), Dual-domain Cross Attention
-(DCA), and the Auxiliary Contrastive Loss (ACL). Table 3 summarizes the results on four ETT datasets, where each component is removed individually under the 96-step prediction horizon. Removing ACE and DCA leads to significant performance degradation, while WD provides slight improvements. The ACL also contributes marginally more than WD. （see our paper for full results 😊）.
-
-<p align="center">
-<img src="./figures/ablation.png"  alt="" align=center />
-</p>
 
 
 ## Further Reading
