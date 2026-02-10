@@ -146,7 +146,8 @@ parser.add_argument('--trend_weight', type=float, default=0.5, help='trend_weigh
 parser.add_argument('--l1l2_alpha', type=float, default=0.035, help='l1l2_alpha')
 parser.add_argument('--aug_constrast_weight1', type=float, default=0.01, help='aug_constrast_weight1')
 parser.add_argument('--aug_constrast_weight2', type=float, default=0.008, help='aug_constrast_weight2')
-
+parser.add_argument('--weight_att', type=int, default=0.1, help='dimension of model')
+parser.add_argument('--sr_ratio', type=int, default=2, help='dimension of model')
 args, unknown = parser.parse_known_args()
 
 
@@ -193,7 +194,7 @@ if args.is_training:
         index +=1
         exp = Exp(args)  # set experiments
         # version = "iter:" + str(index)+ "   "+ "learning_rate:" + str(args.learning_rate)+" "  + "dropout:" + str(args.dropout) 
-        version = "iter:" + str(index)+ "   "+ "alpha:" + str(args.alpha)+" "  + "aug_weight:" + str(args.aug_weight) 
+        version = "iter:" + str(index)+ "   "+ "alpha:" + str(args.alpha)+" "  + "aug_weight:" + str(args.aug_weight)   + "sr_ratio:" + str(args.sr_ratio)   + "weight_att:" + str(args.weight_att) 
 
         setting = 'ver_{}_us_{}_lr{}_dr{}_{}_sl{}_pl{}_dm{}_nh{}_aw{}_alpha{}_fw{}_ag1c{}_ag2c{}_bs{}_{}_{}_{}_ft{}_el{}_dl{}_df{}_id{}_eb{}_dsl{}_dsw{}_ls{}_pw{}_{}_{}'.format(
             args.ver,
