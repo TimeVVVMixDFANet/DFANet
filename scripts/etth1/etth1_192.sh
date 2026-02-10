@@ -3,11 +3,18 @@ model_name=FreqMixAttNet
 run_date='test'
 root_path='./data'
 
-seq_len=96
-e_layers=2
-learning_rate=0.03
-d_model=16
+weight_att=0.01
+sr_ratio= 2
+freq_weight=8
+seq_len=192
+d_model=32
 n_heads=8
+e_layers=2
+learning_rate=0.02
+l1l2_alpha=0.00
+aug_weight=0.07
+
+
 d_ff=32
 train_epochs=6
 patience=6
@@ -15,10 +22,8 @@ batch_size=128
 dropout=0.1
 down_sampling_layers=2
 down_sampling_window=2
-freq_weight=8
-alpha=0.5 
-l1l2_alpha=0.035
-aug_weight=0.008
+alpha=0.7 
+
 mix_rate=0.1
 jitter_ratio=0.3
 devices='0'
@@ -47,6 +52,8 @@ python -u run_model.py \
 --patch_len 16 \
 --d_model $d_model \
 --n_heads $n_heads \
+--weight_att $weight_att \
+--sr_ratio $sr_ratio \
 --d_ff $d_ff \
 --down_sampling_layers $down_sampling_layers \
 --down_sampling_window $down_sampling_window \
