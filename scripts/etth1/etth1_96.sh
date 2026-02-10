@@ -7,7 +7,7 @@ root_path='./data'
 
 
 weight_att=0.01
-sr_ratio = 8
+sr_ratio= 8
 seq_len=192
 e_layers=2
 learning_rate=0.01
