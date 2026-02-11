@@ -1,32 +1,38 @@
+
 # export CUDA_VISIBLE_DEVICES=0
 
 nvidia-smi
 echo "CUDA_VISIBLE_DEVICES: $CUDA_VISIBLE_DEVICES"
 python -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}'); print(f'CUDA device count: {torch.cuda.device_count()}')"
 
-
 model_name=FreqMixAttNet
 run_date='test'
 root_path='./data'
 
-seq_len=96
-e_layers=2
-learning_rate=0.02
-d_model=32
+pred_len=192
+learning_rate=0.01
+dropout=0.15
+
+sr_ratio= 2
+freq_weight=8
 n_heads=8
-d_ff=32
-train_epochs=20
-patience=6
+d_model=32
+
+weight_att=0.01
+seq_len=192
+
+aug_weight=0.07
+alpha=0.7 
 batch_size=128
-dropout=0.1
+
+
+e_layers=2
+l1l2_alpha=0.00
+d_ff=32
+train_epochs=6
+patience=6
 down_sampling_layers=2
 down_sampling_window=2
-aug_constrast_weight1=0.004
-aug_constrast_weight2=0.004
-freq_weight=8
-alpha=0.5
-l1l2_alpha=0.035
-aug_weight=0.03
 mix_rate=0.1
 jitter_ratio=0.3
 devices='0'
@@ -45,16 +51,18 @@ python -u run_model.py \
 --features M \
 --seq_len $seq_len \
 --label_len 0 \
---pred_len 192 \
+--pred_len 96 \
 --e_layers $e_layers \
 --decomp_method wavelet \
---enc_in 21 \
---dec_in 21 \
+--enc_in 7 \
+--c_out 7 \
 --des 'Exp' \
 --itr 1 \
 --patch_len 16 \
 --d_model $d_model \
 --n_heads $n_heads \
+--weight_att $weight_att \
+--sr_ratio $sr_ratio \
 --d_ff $d_ff \
 --down_sampling_layers $down_sampling_layers \
 --down_sampling_window $down_sampling_window \
@@ -69,6 +77,4 @@ python -u run_model.py \
 --batch_size $batch_size \
 --aug_weight $aug_weight \
 --mix_rate $mix_rate \
---aug_constrast_weight1 $aug_constrast_weight1 \
---aug_constrast_weight2 $aug_constrast_weight2 \
---jitter_ratio $jitter_ratio \
+--jitter_ratio $jitter_ratio 
