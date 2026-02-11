@@ -35,16 +35,17 @@ jitter_ratio=0.3
 devices='0'
 decomp_method='wavelet'
 
+
 python -u run_model.py \
 --gpu 0 \
 --task_name long_term_forecast \
 --is_training 1 \
 --devices $devices \
---data_path ETTh1.csv \
+--data_path exchange_rate.csv \
 --root_path $root_path \
---model_id $run_date'_ETTh1' \
+--model_id $run_date'_exchange_rate' \
 --model $model_name \
---data ETTh1 \
+--data custom \
 --features M \
 --seq_len $seq_len \
 --label_len 0 \
