@@ -42,7 +42,7 @@ python -u run_model.py \
 --root_path $root_path \
 --model_id $run_date'_ETTh1' \
 --model $model_name \
---data ETTh1 \
+--data ETTh2 \
 --features M \
 --seq_len $seq_len \
 --label_len 0 \
