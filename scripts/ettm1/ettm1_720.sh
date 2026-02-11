@@ -42,9 +42,9 @@ python -u run_model.py \
 --task_name long_term_forecast \
 --is_training 1 \
 --devices $devices \
---data_path ETTh1.csv \
+--data_path ETTm1.csv \
 --root_path $root_path \
---model_id $run_date'_ETTh1' \
+--model_id $run_date'_ETTm1' \
 --model $model_name \
 --data ETTm1 \
 --features M \
