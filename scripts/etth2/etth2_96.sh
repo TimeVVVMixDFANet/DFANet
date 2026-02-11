@@ -17,12 +17,12 @@ sr_ratio= 4
 n_heads=8
 d_model=16
 freq_weight=8
-weight_att=0.03
+weight_att=0.05
 seq_len=384
 
-aug_weight=0.05
+aug_weight=0.3
 batch_size=128
-alpha=0.7 
+alpha=0.3 
 
 e_layers=2
 l1l2_alpha=0.00
