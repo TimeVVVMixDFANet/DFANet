@@ -19,7 +19,7 @@ n_heads=4
 d_model=32
 freq_weight=8
 weight_att=0.01
-seq_len=384
+seq_len=288
 
 aug_weight=0.07
 alpha=0.7 
