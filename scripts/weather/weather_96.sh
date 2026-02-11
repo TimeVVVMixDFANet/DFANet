@@ -41,9 +41,9 @@ python -u run_model.py \
 --task_name long_term_forecast \
 --is_training 1 \
 --devices $devices \
---data_path exchange_rate.csv \
+--data_path weather.csv \
 --root_path $root_path \
---model_id $run_date'_exchange_rate' \
+--model_id $run_date'_weather' \
 --model $model_name \
 --data custom \
 --features M \
