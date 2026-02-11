@@ -16,13 +16,13 @@ dropout=0.2
 sr_ratio= 8
 n_heads=8
 d_model=16
-freq_weight=8
+freq_weight=4
 weight_att=0.03
 seq_len=192
 
 aug_weight=0.07
 batch_size=128
-alpha=0.7 
+alpha=0.9 
 
 e_layers=2
 l1l2_alpha=0.00
