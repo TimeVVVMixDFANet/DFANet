@@ -2,18 +2,7 @@
 model_name=FreqMixAttNet
 run_date='test'
 root_path='./data'
-for dropout in [ 0.1]:
-                # 0.1,0.15,0.2
-                # 0.004,0.006,0.008,0.01,0.02,0.03,0.04,0.05,0.06,0.08,0.1
-                for alpha in [0.3]:
-                    for sr_ratio in [4]:
-                        for aug_weight in [0.3]:
-                            # for d_model in [16]:
-                            for weight_att in [0.05]:
-                                # weight_att = 0.01
-                                mix_rate = 0.1  
-                                args.model = 'TimeMixerFilter3_7'
-                                args.freq_weight = 8
+
 
 pred_len=96
 learning_rate=0.2
