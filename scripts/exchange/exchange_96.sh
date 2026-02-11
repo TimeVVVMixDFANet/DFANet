@@ -10,12 +10,12 @@ run_date='test'
 root_path='./data'
 
 pred_len=96
-learning_rate=0.008
-dropout=0.1
+learning_rate=0.02
+dropout=0.15
 
-sr_ratio= 4
+sr_ratio= 2
 freq_weight=8
-n_heads=4
+n_heads=8
 d_model=32
 
 weight_att=0.01
