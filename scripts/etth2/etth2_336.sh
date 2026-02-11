@@ -1,3 +1,8 @@
+# export CUDA_VISIBLE_DEVICES=0
+
+nvidia-smi
+echo "CUDA_VISIBLE_DEVICES: $CUDA_VISIBLE_DEVICES"
+python -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}'); print(f'CUDA device count: {torch.cuda.device_count()}')"
 
 model_name=FreqMixAttNet
 run_date='test'
@@ -37,9 +42,9 @@ python -u run_model.py \
 --task_name long_term_forecast \
 --is_training 1 \
 --devices $devices \
---data_path ETTh1.csv \
+--data_path ETTh2.csv \
 --root_path $root_path \
---model_id $run_date'_ETTh1' \
+--model_id $run_date'_ETTh2' \
 --model $model_name \
 --data ETTh2 \
 --features M \
