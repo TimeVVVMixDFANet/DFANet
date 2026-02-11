@@ -1,4 +1,10 @@
 
+# export CUDA_VISIBLE_DEVICES=0
+
+nvidia-smi
+echo "CUDA_VISIBLE_DEVICES: $CUDA_VISIBLE_DEVICES"
+python -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}'); print(f'CUDA device count: {torch.cuda.device_count()}')"
+
 model_name=FreqMixAttNet
 run_date='test'
 root_path='./data'
