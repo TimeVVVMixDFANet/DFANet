@@ -9,32 +9,34 @@ model_name=FreqMixAttNet
 run_date='test'
 root_path='./data'
 
+pred_len=96
+learning_rate=0.008
+dropout=0.1
 
-
+sr_ratio= 4
+freq_weight=8
+n_heads=4
+d_model=32
 
 weight_att=0.01
-sr_ratio= 8
 seq_len=192
+
+aug_weight=0.07
+alpha=0.7 
+batch_size=128
+
+
 e_layers=2
-learning_rate=0.01
-d_model=32
-n_heads=8
+l1l2_alpha=0.00
 d_ff=32
 train_epochs=6
 patience=6
-batch_size=128
-dropout=0.1
 down_sampling_layers=2
 down_sampling_window=2
-freq_weight=8
-alpha=0.7 
-l1l2_alpha=0.0
-aug_weight=0.07
 mix_rate=0.1
 jitter_ratio=0.3
 devices='0'
 decomp_method='wavelet'
-
 
 python -u run_model.py \
 --gpu 0 \
