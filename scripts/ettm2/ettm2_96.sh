@@ -18,7 +18,7 @@ n_heads=4
 d_model=16
 
 weight_att=0.01
-seq_len=192
+seq_len=384
 
 aug_weight=0.07
 alpha=0.7 
